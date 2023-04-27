@@ -1,1 +1,129 @@
 /* You can add global styles to this file, and also import other style files */
+
+*{  margin:0;     padding:0;    box-sizing: border-box; }
+
+body{
+    height: 100vh;
+}
+div{
+    color: whitesmoke;
+    text-align: center; 
+}
+
+.ImageWrapper {
+    overflow: hidden;
+    background-color: hsl(240, 25%, 67%);
+    background-image: conic-gradient(from 0deg at 50% 50%, darkblue, #2a6bcc,  lightblue, #2a6bcc, darkblue);
+    background-blend-mode: multiply;
+    background-image:url("https://images.unsplash.com/photo-1643330683233-ff2ac89b002c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fHBsYW5ldHxlbnwwfHwwfHw%3D&w=1000&q=80");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;    
+    height: 100vh;
+    transition: 1s;
+    pointer-events: none;
+}
+
+.TT{
+    border-radius: 2%;
+    position: absolute;
+    /* background-color: blue; */
+    width: 36vmin;
+    aspect-ratio: 5/7;
+    left: 70vw;
+    top: 50%;
+    transform: translate(-50%, -50%);    
+}
+
+.ImageWrapper > .TT > .imgCard{
+    user-select: none;
+    border-radius: inherit;
+    transform: translate(-50%);
+    position: absolute;
+    width: 35vmin;
+    aspect-ratio: 5/7;
+    object-fit: cover;
+    object-position: 100% center;;
+    outline: solid 1px white;
+    box-shadow: whitesmoke 10px -1px;
+    transition: all 1s;
+    z-index: 100;
+    pointer-events: auto;
+}
+
+.imgCard:hover{
+    transform: translateY(50%);
+}
+
+.ImageWrapper:hover{
+    background-color: hsl(240, 33%, 17%);
+    background-image: conic-gradient(from 0deg at 50% 50%, purple, darkblue,  black, darkblue, purple);
+    background-image:url("https://images.unsplash.com/photo-1643330683233-ff2ac89b002c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fHBsYW5ldHxlbnwwfHwwfHw%3D&w=1000&q=80");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+}
+
+
+
+
+  
+
+.TT:hover > .imgCard:nth-child(1){
+    transform: translate(-150%, 0%) rotate(-8deg);
+    top: 2px;
+    z-index: 1;
+}
+.TT:hover > .imgCard:nth-child(2){
+    transform: translate(-130%, -2%) rotate(-6deg);
+    top: 2px;
+    z-index: 1;
+}
+.TT:hover > .imgCard:nth-child(3){
+    transform: translate(-110%, -4%) rotate(-4deg);
+    top: 2px;
+    z-index: 1;
+}
+.TT:hover > .imgCard:nth-child(4){
+    transform: translate(-80%, -6%) rotate(-2deg);
+    top: 2px;
+    z-index: 1;
+}
+.TT:hover > .imgCard:nth-child(5){
+    transform: translate(-50%, -6%);
+    top: 2px;
+    z-index: 10;
+}
+.TT:hover > .imgCard:nth-child(6){
+    transform: translate(-20%, -6%) rotate(2deg);
+    top: 2px;
+
+}
+.TT:hover > .imgCard:nth-child(7){
+    transform: translate(10%, -4%) rotate(4deg);
+    top: 2px;
+
+}
+.TT:hover > .imgCard:nth-child(8){
+    transform: translate(30%, -2%) rotate(6deg);
+    top: 2px;
+  
+}
+.TT:hover > .imgCard:nth-child(9){
+    transform: translate(50%, -0%) rotate(8deg);
+    top: 2px;
+ 
+}
+
+.TT > .imgCard:nth-child(9){
+    z-index: 1;
+}
+.TT > .imgCard:nth-child(8){
+    z-index: 2;
+}
+.TT > .imgCard:nth-child(7){
+    z-index: 3;
+}
+.TT > .imgCard:nth-child(6){
+    z-index: 4;
+}

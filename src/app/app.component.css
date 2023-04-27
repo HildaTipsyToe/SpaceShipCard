@@ -1,0 +1,35 @@
+.Paragraf{
+    position: relative;
+    width: 50vmin;
+    left: 10vw;
+    top: 50%;
+    transform: translateY(-50%);
+    background: -webkit-linear-gradient(top left, teal, whitesmoke);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    outline: teal 1px solid;
+}
+.Paragraf > p{
+    margin-top: 15px;
+    font-size: 1.2rem;
+    background: -webkit-linear-gradient(top left, teal, whitesmoke);
+    /* -webkit-background-clip: text; */
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.Paragraf > h1{
+    font-size: 2.4rem;
+    background: -webkit-linear-gradient(top left, teal, whitesmoke);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: underline;
+}
+
+.underlines{
+
+}
+
+outline{
+
+}
