@@ -1,6 +1,6 @@
 .Paragraf{
     position: relative;
-    width: 50vmin;
+    width: 500px;
     left: 10vw;
     top: 50%;
     transform: translateY(-50%);
@@ -14,7 +14,6 @@
     margin-top: 15px;
     font-size: 1.2rem;
     background: -webkit-linear-gradient(top left, teal, whitesmoke);
-    /* -webkit-background-clip: text; */
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -24,12 +23,163 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
     text-decoration: underline;
+    animation: shuffle 2s ease-in-out  1 forwards;
 }
 
-.underlines{
 
+
+.ImageWrapper {
+    overflow: hidden;
+    background-color: hsl(240, 25%, 67%);
+    /* background-image: conic-gradient(from 0deg at 50% 50%, darkblue, #2a6bcc,  lightblue, #2a6bcc, darkblue); */
+    background-blend-mode: multiply;
+    background-image:url("https://images.unsplash.com/photo-1543722530-d2c3201371e7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2074&q=80");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;    
+    height: 100vh;
+    transition: 1s;
+    pointer-events: none;
 }
 
-outline{
-
+.InnerWrapper{
+    border-radius: 2%;
+    position: absolute;
+    width: 35vmin;
+    aspect-ratio: 5/7;
+    left: 70vw;
+    top: 50%;
+    transform: translate(-50%, 95%); 
 }
+
+.ImageWrapper > .InnerWrapper > .imgCard{
+    user-select: none;
+    border-radius: inherit;
+    transform: translate(-50%);
+    position: absolute;
+    width: 35vmin;
+    aspect-ratio: 5/7;
+    object-fit: cover;
+    object-position: 100% center;;
+    outline: solid 1px white;
+    box-shadow: whitesmoke 10px -1px;
+    transition: all 1s;
+    z-index: 100;
+    transform: translate(var(--Xtranslate), 0) rotate(0);
+    pointer-events: auto;
+    animation: spread 2s ease-out;
+}
+
+.ImageWrapper:hover{
+    background-color: hsl(240, 33%, 17%);
+    /* background-image: conic-gradient(from 0deg at 50% 50%, rgb(48, 1, 48), darkblue,  black, darkblue, rgb(48, 1, 48)); */
+    background-image:url("https://images.unsplash.com/photo-1543722530-d2c3201371e7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2074&q=80");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+}
+
+.ImageWrapper > .InnerWrapper > .imgCard:hover{
+    transform: translate(var(--Xtranslate), -95%) rotate(0);
+}
+
+@keyframes spread{
+    0%{
+        transform: translate(-50%, 0%);
+    }
+    100%{
+        transform: translate(var(--Xtranslate), 0) rotate(0);
+              
+    }
+}
+
+.TT1{
+    --Xtranslate: -150%;
+    --Ytranslate: 0%;
+    --rotate: -8deg;
+}
+
+.TT2{
+    --Xtranslate: -130%;
+    --Ytranslate: -2%;
+    --rotate: -6deg;
+}
+
+.TT3{
+    --Xtranslate: -110%;
+    --Ytranslate: -4%;
+    --rotate: -4deg;
+}
+
+.TT4{
+    --Xtranslate: -80%;
+    --Ytranslate: -6%;
+    --rotate: -2deg;
+}
+
+.TT5{
+    --Xtranslate: -50%;
+    --Ytranslate: -6%;
+    --rotate: -0deg;
+}
+
+.TT6{
+    --Xtranslate: -20%;
+    --Ytranslate: -6%;
+    --rotate: 2deg;
+}
+
+.TT7{
+    --Xtranslate: 10%;
+    --Ytranslate: -4%;
+    --rotate: 4deg;
+}
+
+.TT8{
+    --Xtranslate: 30%;
+    --Ytranslate: -2%;
+    --rotate: 6deg;
+}
+
+.TT9{
+    --Xtranslate: 50%;
+    --Ytranslate: 0%;
+    --rotate: 8deg;
+}
+
+/* .TT:hover > .imgCard:nth-child(1){
+    transform: translate(-150%, 0%) rotate(-8deg);
+    top: 2px;
+} 
+.TT:hover > .imgCard:nth-child(2){
+    transform: translate(-130%, -2%) rotate(-6deg);
+    top: 2px;
+} 
+ .TT:hover > .imgCard:nth-child(3){
+    transform: translate(-110%, -4%) rotate(-4deg);
+    top: 2px;
+}
+.TT:hover > .imgCard:nth-child(4){
+    transform: translate(-80%, -6%) rotate(-2deg);
+    top: 2px;
+}
+.TT:hover > .imgCard:nth-child(5){
+    transform: translate(-50%, -6%);
+    top: 2px;
+}
+.TT:hover > .imgCard:nth-child(6){
+    transform: translate(-20%, -6%) rotate(2deg);
+    top: 2px;
+}
+.TT:hover > .imgCard:nth-child(7){
+    transform: translate(10%, -4%) rotate(4deg);
+    top: 2px;
+}
+.TT:hover > .imgCard:nth-child(8){
+    transform: translate(30%, -2%) rotate(6deg);
+    top: 2px;  
+}
+.TT:hover > .imgCard:nth-child(9){
+    transform: translate(50%, -0%) rotate(8deg);
+    top: 2px; 
+}  */
