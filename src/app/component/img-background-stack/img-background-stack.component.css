@@ -1,0 +1,43 @@
+*{
+    overflow: visible;
+}
+.OuterWrap{
+    /* overflow: hidden; */
+    background-image: url("https://images.unsplash.com/photo-1683343948131-0eabfaa7c1f0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+h1{
+    color: red;
+}
+
+.InnerWrap{
+    position: absolute;
+    width: 22vmin;
+    aspect-ratio: 5/7;
+    background-color: red;
+    border-radius: 5%;
+    /* left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%); */
+}
+
+.ImgCards{
+    border-radius: inherit;
+    width: inherit;
+    aspect-ratio: inherit;
+    background-size: cover;
+    display: flex;
+    position: absolute;
+}
+
+.OuterWrap > .InnerWrap > .ImgCards > h1{
+    text-align: center;
+    line-height: 100%;
+    height: 100%;
+    width: 100%;
+}
