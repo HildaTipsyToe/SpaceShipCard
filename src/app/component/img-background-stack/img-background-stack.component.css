@@ -2,13 +2,12 @@
     overflow: visible;
 }
 .OuterWrap{
-    /* overflow: hidden; */
     background-image: url("https://images.unsplash.com/photo-1683343948131-0eabfaa7c1f0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80");
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 h1{
@@ -19,7 +18,7 @@ h1{
     position: absolute;
     width: 22vmin;
     aspect-ratio: 5/7;
-    background-color: red;
+    /* background-color: red; */
     border-radius: 5%;
     /* left: 50%;
     top: 50%;
@@ -32,7 +31,9 @@ h1{
     aspect-ratio: inherit;
     background-size: cover;
     display: flex;
-    position: absolute;
+    position: absolute; 
+    transition: all 0.3s ease;
+    /* transform: translate(var(--x-position), var(--y-position)); */
 }
 
 .OuterWrap > .InnerWrap > .ImgCards > h1{

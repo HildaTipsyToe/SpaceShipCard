@@ -22,26 +22,67 @@ export class ImgBackgroundStackComponent implements OnInit {
   ]
 
   ngAfterViewInit(): void{
-
   }
 
-  getRandomInt(max: number) {
-    return Math.floor(Math.random() * max);
-  }
 
   ngOnInit(): void {
-  const t = document.getElementById("TT2")!.getElementsByTagName("div")
-  const tt = document.getElementsByClassName('InnerWrap')
+  tester(this.backgroundImagesLink)
   
-  console.log( t[1].clientWidth);
-  
-    for (var i = 0; i < t.length; i++){
-      const Xcoor: number = this.getRandomInt(window.innerWidth - t[1].clientWidth) 
-      const Ycoor: number = this.getRandomInt(window.innerHeight - t[1].clientHeight)
-      t[i].style.backgroundImage =`url(${this.backgroundImagesLink[i]})`    
-      t[i].style.left = `${Xcoor}px`
-      t[i].style.top = `${Ycoor}px`
-      console.log(t[i].getBoundingClientRect());     
-    }
   }
 }
+function getRandomInt (max: number): number;
+function getRandomInt (max: number, min?: number): number {
+  if(min !== undefined){
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  return Math.floor(Math.random() * max);     
+}
+function tester(backgroundImagesLink:string[]):void {
+  
+const t = document.getElementById("TT2")!.getElementsByTagName("div")  
+const wid = t[1].clientWidth;
+const hei = t[1].clientHeight;  
+
+  for (var i = 0; i < t.length; i++){
+    const Xcoor: number = getRandomInt(window.innerWidth - t[1].clientWidth) 
+    const Ycoor: number = getRandomInt(window.innerHeight - t[1].clientHeight)
+    t[i].style.left = `${Xcoor}px`
+    t[i].style.top = `${hei * i}px`
+    // t[i].style.top = `${Ycoor}px`
+
+    for(var ii = 0; ii < i; ii++){
+        if((t[i].offsetLeft + wid >= t[ii].offsetLeft && t[i].offsetLeft + wid <= t[ii].offsetLeft + wid) || 
+        (t[i].offsetLeft <= t[ii].offsetLeft + wid && t[i].offsetLeft >= t[ii].offsetLeft)){
+
+
+          if(t[i].offsetLeft + wid >= t[ii].offsetLeft && t[i].offsetLeft + wid <= t[ii].offsetLeft + wid){
+            t[i].style.color = `purple`
+            console.log(t[i].offsetLeft);            
+            let tempcoord = getRandomInt(window.innerWidth - wid)
+            console.log(tempcoord); 
+            t[i].style.left = `${tempcoord}px`
+            console.log("indefra x+wid af");
+            console.log(i + "  :  " + ii);
+          }
+
+          if(t[i].offsetLeft <= t[ii].offsetLeft + wid && t[i].offsetLeft >= t[ii].offsetLeft){
+            t[i].style.color = `pink`
+            console.log(t[i].offsetLeft);            
+            let tempcoord = getRandomInt(window.innerWidth - wid)
+            console.log(tempcoord);            
+            t[i].style.left = `${tempcoord}px`
+            console.log("indefra x af");
+            console.log(i + "  :  " + ii); 
+          }              
+        }
+        else{
+          t[i].style.color = `orange`
+          console.log(t[i].offsetLeft + " --- " + i);
+          
+        }
+    }
+    t[i].style.backgroundImage =`url(${backgroundImagesLink[i]})`
+  }  
+}
+
+
